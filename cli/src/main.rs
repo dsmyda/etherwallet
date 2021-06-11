@@ -8,7 +8,7 @@ use structopt::StructOpt;
 enum Args {
   #[structopt(about = "🚀 Create a wallet! Start from scratch or use an existing mnemonic.")]
   Create {},
-  #[structopt(about = "🤑 Send crypto an externally owned account (EOA).")]
+  #[structopt(about = "🤑 Send ether to an externally owned account (EOA).")]
   Send { address: String, amount: u64 },
   #[structopt(about = "😭 Find out how broke you are!")]
   Balance {},
@@ -21,7 +21,7 @@ fn main() {
     Args::Create {} => {}
     Args::Send { address, amount } => {
       if !middleware::eip55_checksum::verify(address) {
-        println!("Address checksum failed. Is there a typo in your address?");
+        println!("Checksum failed. Is there a typo in your address?");
       } else {
         println!("Funds sent!")
       }

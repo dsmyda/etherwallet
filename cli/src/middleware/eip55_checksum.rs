@@ -32,7 +32,7 @@ pub fn verify(address: String) -> bool {
       panic!("Detected a non hex character in address {}.", address)
     }
   }
-  let checksummed_address = "0x".to_owned() + &checksummed_address;
+  checksummed_address = "0x".to_owned() + &checksummed_address;
   return checksummed_address.eq(&address);
 }
 
