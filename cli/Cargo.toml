@@ -1,5 +1,5 @@
 [package]
-name = "ethwallet"
+name = "etherwallet"
 version = "0.1.0"
 authors = ["Danny <danny.smyda@gmail.com>"]
 edition = "2018"
@@ -8,3 +8,6 @@ edition = "2018"
 
 [dependencies]
 structopt = "0.3.21"
+sha3 = "0.9.1"
+hex = "0.4.3"
+web3 = { version = "0.16.0", default-features = false, features = ["http", "http-tls"] }
